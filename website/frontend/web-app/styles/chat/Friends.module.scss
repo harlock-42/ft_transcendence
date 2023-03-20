@@ -1,0 +1,41 @@
+@use 'styles/colors.module';
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.friendContextMenu
+{
+  position: fixed;
+  @include unselectable;
+  background-color: colors.$Black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0.2em;
+  gap: 0.3em;
+  div {
+	font-size: 0.6em;
+	box-sizing: border-box;
+	width: 100%;
+	color: colors.$DarkGrey;
+	border: colors.$DarkGrey 0.1em solid;
+	&:hover {
+	  background: colors.$Black;
+	  color: colors.$White;
+	  border: colors.$White 0.1em solid;
+	}
+	&:active {
+	  background-color: colors.$White;
+	  color: colors.$Black;
+	  border: colors.$Black 0.1em solid;
+	}
+  }
+}

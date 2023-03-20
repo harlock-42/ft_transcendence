@@ -1,0 +1,119 @@
+@use 'styles/colors.module';
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.match {
+	margin:auto;
+	background-color: colors.$Card-background;
+	width: 80%;
+	height: 80%;
+
+	table {
+		height: 80%;
+		width: 100%;
+	}
+
+	.matchSingle {
+		height: 20%;
+		display: flex;
+		border: 1px solid black;
+		border-top: none;
+		font-size: 2em;
+		box-sizing: border-box;
+		&:first-child {
+			border: 1px solid black;
+		}
+	}
+	
+}
+
+
+
+.pagination-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationContainer {
+	display: flex;
+	list-style-type: none;
+	justify-content: center;
+	align-items: center;
+	height: 20%;
+	.paginationItem {
+		padding: 0 12px;
+		height: 32px;
+		text-align: center;
+		margin: auto 4px;
+		color: rgba(0, 0, 0, 0.87);
+		display: flex;
+		box-sizing: border-box;
+		align-items: center;
+		letter-spacing: 0.01071em;
+		border-radius: 16px;
+		line-height: 1.43;
+		min-width: 32px;
+		font-size: 2em;
+		
+		&.dots:hover {
+			background-color: transparent;
+			cursor: default;
+		}
+		
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+			cursor: pointer;
+		}
+		&.selected {
+			background-color: rgba(0, 0, 0, 0.08);
+		}
+		.arrow {
+			&::before {
+				position: relative;
+				/* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+				content: '';
+				/* By using an em scale, the arrows will size with the font */
+				display: inline-block;
+				width: 0.4em;
+				height: 0.4em;
+				border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+				border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+			}
+			&.left {
+				transform: rotate(-135deg) translate(-50%);
+			}
+			&.right {
+				transform: rotate(45deg);
+			}
+		}
+
+		&.disabled {
+			pointer-events: none;
+			.arrow::before {
+				border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+				border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+			}
+			&:hover {
+				background-color: transparent;
+				cursor: default;
+			}
+		}
+	}
+	.test {
+		font-size: 30px !important;
+	}
+}

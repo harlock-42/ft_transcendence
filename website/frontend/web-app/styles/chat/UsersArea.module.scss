@@ -1,0 +1,175 @@
+@use 'styles/colors.module';
+
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.middleContainer {
+  @include flex($justify: flex-start);
+  height: 100%;
+  width: 25%;
+  box-sizing: border-box;
+  font-size: 2.5em;
+  padding: 0 1em 0 1em;
+  border-left: colors.$White 0.25em solid;
+  border-right: colors.$White 0.25em solid;
+}
+
+.searchUserHeader {
+  @include flex($justify: space-around, $direction: row);
+
+  //background-color: #4d557a;
+  width: 100%;
+  height: 11%;
+
+  div {
+    width: 1.5em;
+    //background-color: #335c67;
+    box-sizing: border-box;
+    //padding: .4em;
+    //border: 0.1em colors.$LightGrey solid;
+    border-radius: 20em;
+  }
+
+  input {
+    width: 70%;
+    height: 40%;
+    background-color: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: colors.$White 0.1em solid;
+    color: colors.$White;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+.usersListContainer {
+  //background-color: #0de01b;
+  width: 100%;
+  height: 78%;
+  @include flex($justify: flex-start, $direction: column);
+  @include unselectable;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-top: 0.75em;
+  border-bottom: 0.15em colors.$White solid;
+  border-top: 0.15em colors.$White solid;
+  font-weight: lighter;
+}
+
+.usersFooterContainer {
+  //background-color: #540b0e;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 0.5em;
+  gap: 1vw;
+
+  button {
+    flex-basis: 6vmin;
+    //width: 6vmin;
+    color: colors.$DarkGrey;
+    font-family: inherit;
+    background-color: inherit;
+    cursor: pointer;
+    margin: 0;
+    border: 0;
+    opacity: 0.1;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  .buttonActive {
+    opacity: 1;
+  }
+}
+
+.friendRequestsContainer {
+  width: 100%;
+  //height: 30%;
+  min-height: 10%;
+  max-height: 30%;
+  box-sizing: border-box;
+  border-bottom: 0.15em colors.$White solid;
+  //background-color: #335c67;
+
+  @include flex($justify: flex-start, $direction: column);
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.friendListContainer {
+  width: 100%;
+  //height: 63%;
+  //min-height: 30%;
+  max-height: 63%;
+  box-sizing: border-box;
+  //border-bottom: 0.15em colors.$White solid;
+  //background-color: #4d557a;
+
+  @include flex($justify: flex-start, $direction: column);
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.friendRequestBoxContainer {
+  width: 100%;
+  //background-color: #d4d8f0;
+  @include flex($justify: space-between, $direction: row);
+
+}
+
+.friendRequestButtonsContainer {
+  width: 40%;
+  height: 100%;
+  @include flex($justify: space-around, $direction: row);
+  box-sizing: border-box;
+  //padding: 0.1em;
+
+
+  div {
+    height: auto;
+    width: 1.5em;
+    //background-color: #9e2a2b;
+  }
+}
+
+.userBox {
+  width: 60%;
+  text-align: center;
+  //background-color: #540b0e;
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}

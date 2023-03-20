@@ -1,0 +1,48 @@
+$Header:#4d557a;
+$HeaderText:#d4d8f0;
+
+$Button:#eebbc3;
+$Border:#373D57;
+$Button-text:#232946;
+$Stroke:#b8c1ec;
+$Main:#b8c1ec;
+$Highlight:#D4D8F0;
+$Secondary:#232946;
+$Tertiary:#eebbc3;
+
+$Background: black;
+$Headline: white;
+$Paragraph:white;
+$Card-background:white;
+$Card-headline:white;
+$Card-paragraph:white;
+$Card-tag-background:white;
+$Card-tag-text:white;
+$Card-highlight:white;
+
+$Background-secondary:#a7b0e2;
+
+
+$Black: #090909;
+$DarkGrey: #4A4A4A;
+$LightGrey: #999999;
+$White: #E8E8E8;
+
+$colors: (
+		'black': $Black,
+		'darkGrey': $DarkGrey,
+		'lightGrey': $LightGrey,
+		'white': $White,
+);
+
+:export {
+  @each $name, $color in $colors {
+	#{$name}: $color
+  }
+}
+
+$Victory: #0de01b;
+$Defeat: #ff0000;
+
+$Lock: grayscale(1);
+$Unlock: #ff0000;

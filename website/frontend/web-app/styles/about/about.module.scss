@@ -1,0 +1,102 @@
+@use 'styles/colors.module';
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.home_page {
+	p, a, i, h1, h2, h3, h4 {
+		margin: 0;
+		padding: 0;
+		color: inherit;
+	}
+}
+
+.home_page {
+	@include flex($justify: space-around);
+	width: 90%;
+	height: 90%;
+	padding: 5%;
+	p {
+		font-size: 2em;
+        color: colors.$LightGrey;
+	}
+	h1 {
+        font-size: 3em;
+		margin-bottom: 0.5em;
+	}
+	
+}
+
+.home_container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	gap: 5em;
+	height: 50%;
+	.home_text_container {
+		width: 75%;
+        p{
+		    overflow: auto;
+            height: 85%;
+        }
+	}
+	.img {
+		width: 20% !important;
+		height: 100% !important;
+		span {
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	
+}
+
+.about_us
+{
+	height: 40%;
+	overflow: auto;
+	@include flex($justify: space-evenly, $align: flex-start);
+
+	
+	.us_container {
+		@include flex($direction: row, $justify: space-evenly);
+	}
+}
+
+// TABLET
+@media screen and (max-width: 1024px) {
+
+}
+
+
+// MOBILE
+@media screen and (max-width: 780px) {
+	.home_page {
+		font-size: 1vmax;
+		.home_container {
+			gap: 0px;
+		}
+		.home_text_container {
+			width: 100%;
+		}
+		span {
+			width: 0% !important;
+			height: 0% !important;
+		}
+	}
+	
+}

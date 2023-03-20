@@ -1,0 +1,42 @@
+@use 'styles/colors.module';
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.containerWaiting
+{
+    background-color:  colors.$Black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.wCaviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent,  colors.$LightGrey);
+}
+.waviy span {
+    font-size: 5vw;
+    font-max-size: 7em;
+    position: relative;
+    display: inline-block;
+    color:  colors.$White;
+    text-transform: uppercase;
+    animation: waviy 7s ease-out infinite;
+    animation-delay: calc(.2s * var(--i));
+}
+@keyframes waviy {
+    0%,100%{
+        transform: translateY(0em)
+    }
+    50%
+    {
+        transform: translateY(50vh)
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .waviy span {
+        font-size: 7em;
+    }
+}

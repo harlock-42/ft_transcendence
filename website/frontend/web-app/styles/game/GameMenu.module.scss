@@ -1,0 +1,114 @@
+@use 'styles/colors.module';
+
+.menuContainer {
+    width: 100%;
+    height: 90%;
+    color: colors.$LightGrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    h1 {
+        color: colors.$White;
+        width: auto;
+        text-align: center;
+        font-size: 10em;
+        margin: auto;
+    }
+
+    h2 {
+        color: colors.$White;
+        width: auto;
+        text-align: center;
+        font-size: 7em;
+        margin: auto;
+    }
+}
+
+.btnContainer {
+    font-size: 1em;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    &:hover {
+        cursor:pointer;
+    }
+    .buttons {
+        box-sizing: border-box;
+        display:flex;
+        min-width: 100%;
+        min-height: 30%;
+        padding: 5%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius : 50px;
+        :first-child {
+            display: none;
+            width: 0;
+            height: 0;
+            border-top: 1em solid transparent;
+            border-bottom: 1em solid transparent;
+            margin-right: 4%;
+            border-left: 1.5em solid white;
+        }
+
+        .btnTitle {
+            text-align: center;
+            font-size: 4em;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+        }
+    }
+    .buttons:hover{
+        color: white;
+        :first-child {
+            display: flex;
+        }
+    }
+
+    .buttons:active {
+        color: colors.$White;
+        :first-child {
+            border-top: 1em solid transparent;
+            border-bottom: 1em solid transparent;
+            border-left: 1.5em solid colors.$White;
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .menuContainer {
+        width: auto;
+        h1 {
+            font-size: 15em;
+        }
+
+        h2 {
+            font-size: 9em;
+        }
+    }
+
+    .btnContainer {
+        font-size: 1.5em;
+
+        .buttons {
+            box-sizing: border-box;
+
+            .btnTitle {
+                font-size: 5em;
+            }
+        }
+    }
+}

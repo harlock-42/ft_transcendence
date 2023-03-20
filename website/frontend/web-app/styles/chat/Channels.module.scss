@@ -1,0 +1,409 @@
+@use 'styles/colors.module';
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.channelsContainer {
+  @include flex($justify: flex-start);
+  @include unselectable;
+  height: 100%;
+  width: 6em;
+  box-sizing: border-box;
+  font-size: 2.5em;
+  padding: 0 1em 0 0.5em;
+}
+
+.dmContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 11%;
+  width: 100%;
+
+  :first-child {
+    @include flex;
+  }
+}
+
+.channelList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  height: 78%;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 0.15em colors.$White solid;
+  border-top: 0.15em colors.$White solid;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  gap: 0.75em;
+  overflow-y: auto;
+}
+
+.channelButtonContainer {
+  display: block;
+  width: 3em;
+  height: 3em;
+  min-width: 3em;
+  min-height: 3em;
+  background-color: colors.$Black;
+  box-sizing: border-box;
+  border: 0.1em colors.$White solid;
+  border-radius: 2em;
+  font-weight: bold;
+  opacity: 0.1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  & > * {
+    border-radius: 2em;
+  }
+}
+
+.channelButtonContainerActive {
+  border: 0.25em colors.$White solid;
+  opacity: 1;
+}
+
+.showName {
+  position: absolute;
+  width: 10%;
+  margin-left: -10vw;
+  margin-top: -4vh;
+  text-align: right;
+}
+
+.noImage {
+  //text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.channelFooterBtn {
+  width: 100%;
+  height: 10%;
+  @include flex;
+  //background-color: #540b0e;
+  box-sizing: border-box;
+  padding-top: 0.5em;
+}
+
+.div_img {
+  //@include flex;
+  width: 1.1em;
+  //height: 2em;
+  box-sizing: border-box;
+  //border: 0.05em colors.$White solid;
+  border-radius: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  opacity: 0.1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+
+.channelMenu {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 1em;
+  top: 0;
+  left: -0%;
+  background-color: colors.$Black;
+}
+
+.channelMenuHeader {
+  width: 100%;
+  height: 10%;
+  //background-color: #335c67;
+  display: flex;;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+
+  button {
+    //width-min: 1em;
+    //background-color: #540b0e;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: colors.$DarkGrey;
+    font-family: inherit;
+    background-color: inherit;
+    font-size: 1.3em;
+    font-weight: bold;
+
+    &:hover {
+      color: colors.$LightGrey;
+    }
+
+    &:active {
+      color: colors.$White;
+    }
+  }
+}
+
+.containerChannelToggleMenu {
+  width: 50%;
+  //background-color: #373D57;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  gap: 3vw;
+
+  & > * {
+    cursor: pointer;
+  }
+}
+
+.closeChannelMenuButton {
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  width: 1.5em;
+}
+
+.channelMenuToggleButtonActive {
+  color: colors.$White !important;
+  text-decoration: underline;
+}
+
+.channelForm {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  box-sizing: border-box;
+  border: 0.1em colors.$White solid;
+  border-radius: 2em;
+
+  button {
+    margin: 0;
+    cursor: pointer;
+    color: colors.$DarkGrey;
+    font-family: inherit;
+    background-color: inherit;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0.5em;
+    border: 0.1em colors.$DarkGrey solid;
+    border-radius: 2em;
+
+    &:hover {
+      color: colors.$LightGrey;
+      border: 0.1em colors.$LightGrey solid;
+    }
+
+    &:active {
+      color: colors.$White;
+      border: 0.1em colors.$White solid;
+    }
+  }
+}
+
+.imageContainerForm {
+  width: 3.5em;
+  height: 3.5em;
+  background-color: colors.$Black;
+  box-sizing: border-box;
+  border: 0.1em colors.$White solid;
+  border-radius: 2em;
+  font-weight: bold;
+
+  & > * {
+    border-radius: 2em;
+  }
+}
+
+.channelFormElem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 1.2em;
+
+  &:hover {
+    label {
+      color: colors.$White;
+    }
+  }
+
+  input {
+    cursor: pointer;
+  }
+
+  label {
+    color: colors.$DarkGrey;
+    cursor: pointer;
+  }
+
+  input, textarea {
+    width: 15%;
+    background-color: colors.$White;
+    border: 0;
+    margin: 0;
+    resize: none;
+  }
+}
+
+.searchChannelPanel {
+  width: 100%;
+  height: 90%;
+  box-sizing: border-box;
+  padding: 1em;
+  border: 0.1em colors.$White solid;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+
+}
+
+.searchChannelHeader {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  border: colors.$DarkGrey 0.1em solid;
+  border-radius: 1em;
+  padding: 0.5em;
+  gap: 0.5em;
+
+  input {
+    width: 100%;
+    height: 5%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: none;
+    text-align: center;
+  }
+}
+
+.resultList {
+  width: 80%;
+  height: 100%;
+  gap: 3vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border: colors.$DarkGrey 0.1em solid;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+.searchChannelBox {
+  //background-color: aqua;
+  flex-basis: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  cursor: pointer;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  a {
+    text-align: center;
+  }
+}
+
+.joinForm {
+  //background-color: #373D57;
+  height: 90%;
+  width: 100%;
+  font-size: 0.85em;
+
+  button {
+    margin: 0;
+    color: colors.$DarkGrey;
+    font-family: inherit;
+    background-color: inherit;
+    font-size: .75em;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0.3em;
+    border: 0.1em colors.$DarkGrey solid;
+    border-radius: 2em;
+
+    &:hover {
+      color: colors.$LightGrey;
+      border: 0.1em colors.$LightGrey solid;
+    }
+
+    &:active {
+      color: colors.$White;
+      border: 0.1em colors.$White solid;
+    }
+  }
+}
+
+.joinFormFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  button {
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+.joinFormHeader {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

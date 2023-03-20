@@ -1,0 +1,20 @@
+@use 'styles/colors.module';
+
+.generalContainer {
+    height: 100%;
+    width: 100%;
+    padding: 2em 1.2em 2em 1.2em;
+    background-color: inherit;
+    box-sizing: border-box;
+}
+
+.socialContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: colors.$White;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+

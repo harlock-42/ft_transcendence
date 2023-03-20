@@ -1,0 +1,144 @@
+@use 'styles/colors.module';
+
+
+.rankingCntr {
+  box-sizing: border-box;
+  padding : 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  gap: 2em;
+  //background-color: #9e2a2b;
+}
+
+.podiumCntr {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.podiumCntrImg {
+   &  > * {
+     border-radius: 50em !important;
+   }
+}
+
+
+.podiumCntrBoxProfile {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:first-child {
+    order: 2;
+    flex-grow: 4;
+    .podiumCntrImg {
+      width: 20em;
+    }
+    .nickName {
+      font-size: 3em;
+      color: colors.$LightGrey;
+    }
+
+    .elo {
+      font-size: 1.5em;
+      color: colors.$DarkGrey;
+    }
+  }
+
+  &:nth-child(2) {
+    order: 1;
+    flex-grow: 2;
+    .podiumCntrImg {
+      width: 15em;
+    }
+    .nickName {
+      font-size: 1.75em;
+      color: colors.$LightGrey;
+    }
+
+    .elo {
+      font-size: 1.25em;
+      color: colors.$DarkGrey;
+    }
+  }
+
+  &:nth-child(3) {
+    order: 3;
+    flex-grow: 1;
+    .podiumCntrImg {
+      width: 10em;
+    }
+    .nickName {
+      font-size: 1.5em;
+      color: colors.$LightGrey;
+    }
+
+    .elo {
+      font-size: 1em;
+      color: colors.$DarkGrey;
+    }
+  }
+}
+
+
+
+.ladderCntr {
+  width: 100%;
+  height: 65%;
+  overflow-y: auto;
+  border-top: .1em solid colors.$White;
+  box-sizing: border-box;
+  padding: 0 2em 0 2em;
+}
+
+.ladderBoxCntr {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 130em;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  box-sizing: border-box;
+  border: .3em colors.$White solid ;
+  border-radius: 50em;
+}
+
+.infoRank {
+  text-align: center;
+  font-size: 3em;
+  flex-grow: 1;
+}
+
+.ladderUserCntr {
+  height: 100%;
+  flex-grow: 1;
+  width: 6em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+   a {
+     margin-left: 1em;
+     font-size: 3em;
+     width: 60%;
+     text-align: center;
+   }
+}
+
+.ladderImgCntr
+{
+  width: 9em;
+  &  > * {
+    border-radius: 50em !important;
+  }
+}
+

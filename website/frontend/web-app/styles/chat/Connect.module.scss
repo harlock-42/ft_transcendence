@@ -1,0 +1,112 @@
+@use 'styles/colors.module';
+
+.loginCnt {
+    width: calc(100% - 30vw);
+    height: calc(100% - 15vh);
+    box-sizing: border-box;
+    border: colors.$White 0.5em solid;
+    border-radius: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        position: absolute;
+        font-size: 10em;
+        top: 0.5em;
+    }
+}
+
+.loginInputsCnt {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3em;
+    box-sizing: border-box;
+    padding-bottom: 3em;
+}
+
+.formButtonCnt {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+.loginInputCnt {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+    label {
+        font-size: 3em;
+        width: 35%;
+        text-align: center;
+    }
+    input {
+        overflow-x: visible;
+    }
+}
+
+.loginButtonCnt {
+    width: 40%;
+    height: 16%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons
+{
+    background-color: colors.$Black;
+    color: colors.$LightGrey;
+    font-size: 2.5em;
+    box-sizing: border-box;
+    padding: 0.8em;
+    border: 0.1em colors.$LightGrey solid;
+    border-radius: 20em;
+
+    &:hover
+    {
+        background: colors.$Black;
+        color: colors.$White;
+        border: colors.$White 0.1em solid;
+    }
+    &:active
+    {
+        background-color: colors.$White;
+        color: colors.$Black;
+        border: colors.$Black 0.1em solid;
+    }
+}
+
+.buttonsImg
+{
+    width: 23%;
+    background-color: colors.$Black;
+    font-size: 2.5em;
+    box-sizing: border-box;
+    padding: 0.8em;
+    border: 0.1em colors.$LightGrey solid;
+    border-radius: 20em;
+    opacity: 0.5;
+    &:hover
+    {
+        opacity: 0.75;
+        border: colors.$White 0.1em solid;
+    }
+    &:active
+    {
+        opacity: 1;
+        border: colors.$Black 0.1em solid;
+    }
+}

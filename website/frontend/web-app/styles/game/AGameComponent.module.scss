@@ -1,0 +1,73 @@
+@use 'styles/colors.module';
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gameCmpContainer {
+  box-sizing: border-box;
+  padding: 3em 3em 0 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include unselectable;
+}
+
+.childContainer {
+  height: 88%;
+  width: 100%;
+  box-sizing: border-box;
+  background: colors.$Black;
+  border-radius: 5em;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.2em solid colors.$White;
+}
+
+.btnBackContainer {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.btnBack {
+  min-width: 15%;
+  background-color: colors.$Black;
+  color: colors.$LightGrey;
+  font-size: 2.5em;
+  box-sizing: border-box;
+  padding: .4em;
+  border: 0.1em colors.$LightGrey solid;
+  border-radius: 20em;
+  cursor: pointer;
+
+  &:hover {
+    background: colors.$Black;
+    color: colors.$White;
+    border: colors.$White 0.1em solid;
+  }
+
+  &:active {
+    background-color: colors.$White;
+    color: colors.$Black;
+    border: colors.$Black 0.1em solid;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .btnBack {
+    min-width: 30%;
+    font-size: 4em;
+  }
+}

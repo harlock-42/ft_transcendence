@@ -1,0 +1,606 @@
+@use 'styles/colors.module';
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.profileContainer {
+  box-sizing: border-box;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include unselectable;
+}
+
+.profilePrevAchsMatches {
+  height: 65%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 0.1em colors.$White solid;
+}
+
+.profilePreviewContainer {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: .5em;
+  //border-bottom: 0.1em colors.$White solid;
+}
+
+.profileCnt {
+  width: auto;
+  min-width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-right: 0.1em colors.$White solid;
+  //background-color: #b8c1ec;
+  gap: 0.5em;
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+  }
+
+}
+
+.EditProfileBtn {
+  width: 100%;
+  cursor: pointer;
+  padding-right: 1em;
+  text-align: right;
+  font-size: 1.7em;
+  color: colors.$DarkGrey;
+
+  &:hover {
+    color: colors.$LightGrey;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: colors.$White;
+    text-decoration: underline;
+  }
+}
+
+.Active {
+  pointer-events: inherit;
+  visibility: visible;
+}
+
+.Inactive {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.profileImgCnt {
+  width: 15em;
+  //background-color: colors.$White;
+  box-sizing: border-box;
+  border: 0.5em colors.$White solid;
+  border-radius: 30em;
+
+  & > * {
+    width: 100%;
+    border-radius: 30em;
+  }
+}
+
+.profileImgCntInactive {
+  filter: blur(0.5em);
+  -webkit-filter: blur(0.5em);
+}
+
+.profileNickNameInactive {
+  color: colors.$DarkGrey;
+}
+
+.qrImgCnt {
+  width: 15em;
+  //background-color: colors.$White;
+  box-sizing: border-box;
+  border: 0.5em colors.$White solid;
+  border-radius: 3em;
+  padding: 0.1em;
+
+  & > * {
+    border-radius: 2.4em;
+  }
+}
+
+.cnt404 {
+  z-index: -1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  //background-color: colors.$White;
+}
+
+.cnt404Img {
+  display: block;
+  width: 60vmin;
+
+  & > * {
+    border-radius: 2em;
+  }
+
+  //background-color: colors.$White;
+}
+
+
+.profileRankPreviewCnt {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.1em;
+  gap: 1em;
+
+}
+
+.profileRankHeaderCnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+
+  h4 {
+    color: colors.$DarkGrey;
+    font-size: 1.7em;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: colors.$LightGrey;
+    font-size: 2.5em;
+    margin: 0;
+  }
+}
+
+.profileRankBodyCnt {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.profileRankBarCnt {
+  height: 8em;
+  width: calc(100%);
+  background-color: colors.$Black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  border-radius: 8em;
+  border: .15em colors.$White solid;
+  cursor: crosshair;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  //padding: .1em;
+}
+
+.scoreBar {
+  height: calc(102%);
+  width: calc(var(--w) * 1%);
+  min-width: 20%;
+  max-width: 80%;
+  background-color: colors.$White;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: colors.$Black;
+  border-radius: 8em;
+
+  span {
+    width: 5em;
+    height: 5em;
+    background-color: colors.$Black;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 7em;
+  }
+}
+
+.profileDefeatsScore {
+  width: calc((100 - var(--w)) * 1%);
+  max-width: 80%;
+  min-width: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 4em;
+}
+
+.scoreLeft, .scoreRight {
+  font-size: 2.2em;
+}
+
+.scoreRight {
+  margin-right: 2em;
+}
+
+.profileRankFooterCnt {
+  width: 100%;
+  color: colors.$LightGrey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 2em;
+}
+
+
+.previewCnt {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1em 0.5em 0.5em;
+}
+
+.titlePreviewCmt {
+  font-size: 2.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.previewMoreBtn {
+  font-size: 1.75em;
+  width: 100%;
+  color: colors.$DarkGrey;
+  cursor: pointer;
+
+  &:hover {
+    color: colors.$LightGrey;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: colors.$White;
+    text-decoration: underline;
+  }
+}
+
+.noMatches {
+  color: colors.$LightGrey;
+  margin-top: 2.4em;
+  font-size: 4em;
+  width: 100%;
+  text-align: center;
+}
+
+.previewElementCnt {
+  width: 100%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.7em;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.achCnt {
+  background-color: colors.$Black;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1em;
+  gap: 1.8em;
+  opacity: 0.25;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.achCntActive {
+  opacity: 1;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+.achInfos {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+}
+
+.achImgCnt {
+  box-sizing: border-box;
+  border-radius: 30em;
+  width: 9.5em;
+
+  & > * {
+    display: block;
+    width: 5em;
+
+    border-radius: 30em;
+  }
+}
+
+
+.AllCnt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2em 5em 2em 5em;
+  //background-color: #9e2a2b;
+}
+
+.AllHeaderCnt {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    position: absolute;
+    margin: 0;
+    font-size: 5em;
+  }
+}
+
+.AllBackBtn {
+  width: 6em;
+  margin-right: auto;
+  margin-top: 1em;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.AllBoxCnt {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-top: 1em;
+  //gap: 1em;
+  & > * {
+    width: 50% !important;
+    font-size: 1.5em;
+    //background-color: #335c67;
+    //flex-basis: 9em;
+  }
+}
+
+.AllBoxMatchesCnt {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  gap: 4em;
+
+  & > * {
+    width: 80% !important;
+    height: 10% !important;
+    flex-basis: 9em !important;
+  }
+}
+
+.matchBoxCnt {
+  background-color: colors.$Black;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0.1em colors.$White solid;
+  border-radius: 5em;
+  color: colors.$White;
+  flex-basis: 1em;
+  opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.matchBoxPlayer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  //flex-direction: row;
+  border-radius: 5em;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+
+  & > * {
+    width: 100%;
+
+  }
+
+  a {
+    font-size: 2.5em;
+  }
+}
+
+.matchImgCnt {
+  width: 6.45em;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+
+#MatchBoxNameLeft {
+  border-bottom-right-radius: 5em;
+  border-top-right-radius: 5em;
+  text-align: left;
+  padding-left: 4em;
+}
+
+.matchBoxNameWin {
+  width: 60%;
+  color: colors.$Black;
+  background-color: colors.$White;
+}
+
+.matchBoxNameLoose {
+  width: 40%;
+  color: colors.$White;
+}
+
+#MatchBoxNameRight {
+  text-align: right;
+  padding-right: 4em;
+}
+
+
+.editProfileCntr {
+  width: 100%;
+  height: 100%;
+  background-color: #eebbc3;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 5em 2em 5em;
+
+}
+
+.editBodyCntr {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.editProfileInfoCntr {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0.5em colors.$White solid;
+  border-radius: 5em;
+  padding: 2em;
+
+  h2 {
+    font-size: 2.5em;
+    color: colors.$LightGrey;
+  }
+}
+
+.editFormCntr {
+  width: 100%;
+  height: 75%;
+  box-sizing: border-box;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  label {
+    font-size: 2em;
+    width: 40%;
+  }
+}
+
+.editInputCntr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  & > *:nth-child(2) {
+    width: 50%;
+    margin-left: 2em;
+  }
+}
+
+
+.btnSubmitEdit {
+
+  background-color: colors.$Black;
+  color: colors.$LightGrey;
+  font-size: 2.0em;
+  box-sizing: border-box;
+  padding: .4em;
+  border: 0.1em colors.$LightGrey solid;
+  border-radius: 20em;
+
+  &:hover {
+    background: colors.$Black;
+    color: colors.$White;
+    border: colors.$White 0.1em solid;
+  }
+
+  &:active {
+    background-color: colors.$White;
+    color: colors.$Black;
+    border: colors.$Black 0.1em solid;
+  }
+}

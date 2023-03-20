@@ -1,0 +1,57 @@
+/* *************** */
+/* GLOBAL SECTION  */
+/* *************** */
+@use 'colors.module';
+@import url('https://fonts.googleapis.com/css?family=Roboto Mono:200,300,400,500,700,800,900');
+
+html, #__next {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  overflow: hidden;
+  font-size: 1vmin;
+  margin: 0;
+  padding: 0;
+  background-color: colors.$Black;
+  font-family: "Roboto Mono", monospace;
+
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  color: white;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.7vmin;
+}
+
+/* Track */
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: colors.$DarkGrey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: colors.$LightGrey
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: colors.$White;
+}
+

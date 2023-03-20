@@ -1,0 +1,54 @@
+{
+  "achievements": [
+    {
+      "name": "Visible",
+      "text": "Play one game",
+      "imgUrl": "evaluate.png"
+    },
+    {
+      "name": "Intermediate",
+      "text": "Play 5 games",
+      "imgUrl": "gamer.png"
+    },
+    {
+      "name": "Advanced",
+      "text": "Play 15 games",
+      "imgUrl": "god.png"
+    },
+    {
+      "name": "Old school",
+      "text": "Win 5 games",
+      "imgUrl": "battle.png"
+    },
+    {
+      "name": "Godlike",
+      "text": "Win a game with a score of 11 - 0",
+      "imgUrl": "kill.png"
+    },
+    {
+      "name": "Humiliated",
+      "text": "Loose a game with a score of 0 - 11",
+      "imgUrl": "crime-scene.png"
+    },
+    {
+      "name": "Friendly",
+      "text": "Win a game against a friend",
+      "imgUrl": "keep-distance.png"
+    },
+    {
+      "name": "Killing spree",
+      "text": "Win 5 games in a row",
+      "imgUrl": "skull.png"
+    },
+    {
+      "name": "Dominating",
+      "text": "Win 10 games in a row",
+      "imgUrl": "phenix.png"
+    },
+    {
+      "name": "Legendary",
+      "text": "Win 15 games in a row",
+      "imgUrl": "jesus.png"
+    }
+  ]
+}
